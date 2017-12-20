@@ -10,11 +10,12 @@
     </v-layout>
     <v-layout row wrap class="mt-2">
       <v-flex xs12>
-        <v-carousel>
+        <v-carousel style="cursor: pointer;">
           <v-carousel-item
             v-for="meetup in meetups"
             :src="meetup.imageUrl"
-            :key="meetup.id">
+            :key="meetup.id"
+            @click="onLoadMeetup(meetup.id)">
             <div class="title">
               {{ meetup.title }}
             </div>
@@ -35,9 +36,14 @@ export default {
   data () {
     return {
       meetups: [
-        {imageUrl: 'http://blog.splendia.com/wp-content/uploads/2016/06/times-square.jpg', id: 'kj432k435h', title: 'Meetup in New York'},
+        {imageUrl: 'http://blog.splendia.com/wp-content/uploads/2016/06/times-square.jpg', id: '1', title: 'Meetup in New York'},
         {imageUrl: 'https://media.architecturaldigest.com/photos/5931758bf368f9234dedb534/master/pass/Paris_Personalities_GettyImages-546896176-2.jpg', id: 'esfsdfdsgf', title: 'Meetup in Paris'}
       ]
+    }
+  },
+  methods: {
+    onLoadMeetup(id) {
+      this.$router.push('/meetup/' + id);
     }
   }
 }
