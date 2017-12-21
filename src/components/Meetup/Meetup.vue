@@ -4,14 +4,14 @@
       <v-flex xs12>
         <v-card>
           <v-card-title>
-            <h5 class="primary--text"> My Meetup </h5>
+            <h5 class="primary--text"> {{ meetup.title }} </h5>
           </v-card-title>
           <v-card-media
-            src="http://blog.splendia.com/wp-content/uploads/2016/06/times-square.jpg"
+            :src="meetup.imageUrl"
             height="400px">
           </v-card-media>
           <v-card-text>
-            <div class="info--text"> 17th july 2017 - where it takes place </div>
+            <div class="info--text"> {{ meetup.date }} - where it takes place </div>
             <div> Lorem ipsum dolor sit amet consectetur adipisicing elit.
                Vero voluptate fugit minus accusantium facere deleniti nesciunt,
                dicta nemo similique maxime accusamus id! Nostrum consequuntur
@@ -27,3 +27,14 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  props: ['id'],
+  computed: {
+    meetup () {
+      return this.$store.getters.loadedMeetup(this.id)
+    }
+  }
+}
+</script>
