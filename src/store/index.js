@@ -9,11 +9,15 @@ export default new Vuex.Store({
       { imageUrl: 'http://blog.splendia.com/wp-content/uploads/2016/06/times-square.jpg',
         id: '1',
         title: 'Meetup in New York',
-        date: '2017-07-17'},
+        date: '2017-07-17',
+        location: 'New York',
+        description: 'This is new york'},
       { imageUrl: 'https://media.architecturaldigest.com/photos/5931758bf368f9234dedb534/master/pass/Paris_Personalities_GettyImages-546896176-2.jpg',
         id: 'esfsdfdsgf',
         title: 'Meetup in Paris',
-        date: '2017-07-19'}
+        date: '2017-07-19',
+        location: 'Paris',
+        description: 'Paris Paris'}
     ],
     user: {
       id: '1',
